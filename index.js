@@ -21,4 +21,8 @@ const server=new ApolloServer({
     }
 })
 server.applyMiddleware({app})
+
+app.get('/',(req,res,next)=>{
+res.redirect('/graphql')
+})
 app.listen({ port: process.env.PORT || 4000 },()=>console.log("server working on http://localhost:4000"+server.graphqlPath))
