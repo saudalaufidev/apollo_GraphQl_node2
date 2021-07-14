@@ -25,7 +25,8 @@ const server=new ApolloServer({
     },
     context:{
         db
-    }
+    },
+	introspection: true,
 })
 server.applyMiddleware({app})
 
