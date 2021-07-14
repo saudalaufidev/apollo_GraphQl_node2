@@ -25,4 +25,7 @@ server.applyMiddleware({app})
 app.get('/',(req,res,next)=>{
 res.redirect('/graphql')
 })
+app.get('/graphql',(req,res,next)=>{
+    res.send("Send a POST request to query this endpoint -- Saud")
+})
 app.listen({ port: process.env.PORT || 4000 },()=>console.log("server working on http://localhost:4000"+server.graphqlPath))
